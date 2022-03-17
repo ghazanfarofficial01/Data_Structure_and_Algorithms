@@ -66,8 +66,8 @@ public class Main
     
     public static void main(String[] args)
     {
-        String txt = "GEEKS FOR GEEKS";
-        String pat = "GEEK";
+        String txt = "absdabadbs";
+        String pat = "aba";
            
           // A prime number
         int q = 101;
