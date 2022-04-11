@@ -24,3 +24,6 @@ class Solve {
         return result;
     }
 }
+
+//Time- O(N)
+//Space - O(N)
