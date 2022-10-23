@@ -16,3 +16,46 @@ class Solution {
         return dp[n1][n2];
     }
 }
+
+/******************************************************************************/
+//Function to find the length of longest common subsequence in two strings using memoisation
+
+class Solution
+{  
+    
+    static int lcs(int m, int n, String s1, String s2)
+    {
+    
+    int[][] dp = new int[m + 1][n + 1];
+    
+       for(int i=0;i<m + 1;i++){
+           
+        for(int j=0;j<n + 1;j++){
+            
+          dp[i][j] = -1;
+          
+         }
+            }
+          
+          return l_c_s(s1,s2,0,0,dp);
+          
+    }
+    
+    
+    static int l_c_s(String s1, String s2, int x, int y, int[][] dp){
+             //base case
+        if(x>= s1.length()) return 0;
+        if(y>= s2.length()) return 0;
+        
+        if(dp[x][y] != -1) return dp[x][y];
+        
+        if(s1.charAt(x) == s2.charAt(y)){
+            return dp[x][y] = 1 + l_c_s(s1,s2,x+1,y+1,dp);
+        }
+        
+        else{
+            return dp[x][y] = Math.max(l_c_s(s1,s2,x,y+1,dp),l_c_s(s1,s2,x+1,y,dp));
+        }
+    }
+    
+}
